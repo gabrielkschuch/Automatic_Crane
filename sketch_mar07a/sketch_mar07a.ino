@@ -18,10 +18,6 @@
 #define MAX_DISTANCE
 #define MIN_DISTANCE
 
-bool
-Flag_Roldana = 0,
-Flag_Base = 0,
-Flag_Garra = 0;
 
 unsigned long
 tempo;
@@ -42,47 +38,34 @@ void setup()
   motorGarra.setMaxSpeed(500);
   motorBase.setMaxSpeed(500);
   Serial.begin(9600);
-  Serial.setTimeout(2);
-
 }
 
 void loop()
 {
-  if (Serial.available()) {
-    distance = Serial.parseInt();
-
+  if (Serial.available() > 0) {
+    String input = Serial.readStringUntil('\n');
+    distance = input.toInt();
     Serial.println(distance);
+  }
+  motorRoldana.moveTo(distance);
+  motorRoldana.setSpeed(500);
+  motorRoldana.runSpeedToPosition();
 
+  motorGarra.moveTo(distance);
+  motorGarra.setSpeed(500);
+  motorGarra.runSpeedToPosition();
 
+  motorBase.moveTo(distance);
+  motorBase.setSpeed(500);
+  motorBase.runSpeedToPosition();
 
-    motorRoldana.moveTo(distance);
-    motorRoldana.setSpeed(500);
-    motorRoldana.runSpeedToPosition();
-
-    motorGarra.moveTo(distance);
-    motorGarra.setSpeed(500);
-    motorGarra.runSpeedToPosition();
-
-    motorBase.moveTo(distance);
-    motorBase.setSpeed(500);
-    motorBase.runSpeedToPosition();
-
-
-    Posicao_Roldana = motorRoldana.currentPosition();
-    Posicao_Garra = motorGarra.currentPosition();
-    Posicao_Base = motorBase.currentPosition();
-
-
-
-    if (tempo + 400 < millis()) {
-      Serial.print("Posiçao atual do motor roldana é ");
-      Serial.println(motorRoldana.currentPosition());
-      Serial.print("Posiçao atual do motor base é ");
-      Serial.println(motorBase.currentPosition());
-      Serial.print("Posiçao atual do motor garra é ");
-      Serial.println(motorGarra.currentPosition());
-      tempo = millis();
-    }
-
+  if (tempo + 400 < millis()) {
+    Serial.print("Posiçao atual do motor roldana é ");
+    Serial.println(motorRoldana.currentPosition());
+    Serial.print("Posiçao atual do motor base é ");
+    Serial.println(motorBase.currentPosition());
+    Serial.print("Posiçao atual do motor garra é ");
+    Serial.println(motorGarra.currentPosition());
+    tempo = millis();
   }
 }
