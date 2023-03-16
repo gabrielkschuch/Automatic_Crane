@@ -7,7 +7,7 @@ Chegamos então a ideia de um guidaste semi-automatico, controlado por arduino, 
 
 # INICIO DA PLACA MÃE;
 
-Começamos pela forma de como controlar os motores do guidaste, sabendo que os motores de passo precisam de um SI, especifico para serem controlados, porem os mesmos são caros, e precisavamos de três deles, assim depois de muita discução entre a gente, e os professores, estabelecemos que criariamos um do zero, soldando os SI's, em uma placa, mas as coneções, e todos os fios, por nossas trinta fios no minimo.
+Começamos pela forma de como controlar os motores do guidaste, sabendo que os motores de passo precisam de um CI, especifico para serem controlados, porem os mesmos são caros, e precisavamos de três deles, assim depois de muita discução entre a gente, e os professores, estabelecemos que criariamos um do zero, soldando os CI's, em uma placa, mas as coneções, e todos os fios, por nossas trinta fios no minimo.
 
 # FINAL DA PLACA:
 
