@@ -2,7 +2,7 @@
 
 # INICIO DO PROJETO E SUA IDEALIZAÇÃO:
 
-Com a nova forma de avaliação inesperada, de criar um projeto com uso de microcontroladores, e pelo menos um motor, começamos o braiam storm, para pensar em um projeto derivado dessas ideias.
+Com a nova forma de avaliação inesperada, de criar um projeto com uso de microcontroladores, e pelo menos um motor, começamos o brainstorm, para pensar em um projeto derivado dessas ideias.
 Chegamos então a ideia de um guidaste semi-automatico, controlado por arduino, que o mesmo, faria do uso de outros três motores de passo, para os movimentos do equipamento.
 
 # INICIO DA PLACA MÃE;
